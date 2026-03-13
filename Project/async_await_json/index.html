@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Students API</title>
+</head>
+
+<body>
+  <h1>Check Console (F12)</h1>
+  <script>
+    // Browser: fetch the API
+    //async → allows us to use await
+    //() → function runs immediately
+
+    (async () => {
+      // Browser → Server → Server processes → Response → Browser
+      const res = await fetch('/api/students'); // fetch() is used to send HTTP request to the server.
+      const data = await res.json();
+      console.log(data); // JS array
+    })();
+
+    // GET one student by ID
+    (async () => {
+      const res = await fetch('/api/students/1');
+      const data = await res.json();
+      console.log(data);
+    })();
+
+    // POST — add a new student
+    (async () => {
+      const res = await fetch('/api/students', {
+        method: 'POST',
+        /// Headers tell the server what type of data we are sending.
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        /// body contains the data we want to send to the server.
+        body: JSON.stringify({       /// JSON.stringify() converts JavaScript object → JSON text
+          name: 'John',
+          cgpa: 8.5
+        })
+      });
+      const data = await res.json();
+      console.log(data);
+    })();
+  </script>
+</body>
+
+</html>
