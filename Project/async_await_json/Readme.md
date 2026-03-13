@@ -371,14 +371,14 @@ it to the server, and the server converts it back into an object.
 Keys do not require quotes:
 
     { name: "Amit", cgpa: 8.5 }
-
 ## JSON Format (after JSON.stringify())
 
--   Keys must have quotes
--   It is text/string format
+- Keys must have quotes
+- It is text/string format
 
+```json
+{"name":"Amit","cgpa":8.5}
 ```
-    {"name":"Amit","cgpa":8.5}
 
 ## Output Screenshot
 
@@ -393,5 +393,3 @@ Keys do not require quotes:
 ## Network Tab – JSON API Response
 
 ![Network Response JSON](output/network_response_tab_json_data.png)
-
-
