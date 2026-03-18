@@ -1,0 +1,61 @@
+# Steps to Install Node.js and Create First React Project on Your System:
+
+First, install Node.js from "https://nodejs.org/en/download". Make sure you install the LTS version.
+
+For that, click on the downloaded file "node-v24.12.0-x64" and perform the necessary steps to install Node.js on your system.
+
+Note: We are going to install Node.js globally on our system so we can access it from anywhere.
+
+After installing Node.js on your system, check if it was installed or not. For that, write the command in Command Prompt:
+
+```
+C:\Users\hp>npm -v
+    11.6.2
+
+C:\Users\hp>node -v
+    v24.12.0
+```
+
+Now, create the folder where you are going to create/store your project.
+
+Now, assume that you have created the folder on your "D" drive like "D:\Projects".
+
+Open this "Projects" folder in CMD.
+
+Old way - Not recommended:
+
+Create the React project using this command "npx create-react-app first_project"
+
+```
+D:\Projects>npx create-react-app first_project
+```
+
+Now, in the Projects folder, your React project has been created with the name "first_project".
+
+Go inside the "first_project" using "cd first_project"
+
+```
+D:\Projects>cd first_project
+```
+
+Now, start/run the project using "npm start"
+
+```
+D:\Projects\first_project>npm start
+```
+
+Congratulations, you have successfully created your first React project, and it will run in the browser at "http://localhost:3000/"
+
+```
+OR
+```
+
+New way - must be used to create your React project:
+
+Create the project using "npm create vite@latest my-react-app"
+
+NOTE: Select React and JavaScript from the options if you want to create a React application.
+
+To launch the React application, run the "npm run dev" command in the terminal.
+
+It will run the project on "http://localhost:5173/" URL or any other URL.
