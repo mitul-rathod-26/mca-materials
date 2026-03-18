@@ -1,0 +1,15 @@
+ .flex-container {
+     display: flex;
+     justify-content: space-between;
+     background-color: green;
+     padding: 10px;
+
+ }
+
+ .item {
+     background-color: gainsboro;
+     margin: 10px;
+     padding: 20px;
+     flex-grow: 1;
+     /*each item will grow equally*/
+ }
