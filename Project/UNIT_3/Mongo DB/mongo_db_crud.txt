@@ -1,0 +1,145 @@
+/// create the database 
+use users
+
+/// create a new collection
+db.createCollection("users")
+
+/// insert one record one by one
+print("---------------Insert one record---------------")
+db.users.insertOne({
+  _id: 1,
+  name: "John",
+  email: "john@gmail.com",
+})
+
+db.users.insertOne({
+  _id: 2,
+  name: "Tom",
+  email: "tom@gmail.com",
+  city: "New York, US",
+})
+print("\n------------------------------------------------")
+
+
+/// insert many/multiple  records
+print("---------------Insert many/multiple  records---------------")
+
+db.users.insertMany([
+  {
+    name: "Jerry",
+    email: "jerry@gmail.com",
+    city: "Denmark",
+    mobile: "+1 9575854585",
+  },
+  
+  {
+    _id: 4,
+    name: "Ben",
+    email: "ben@gmail.com",
+    mobile: "+1 9296874859",
+    city: "Chicago",
+    gender: "Male",
+  },
+  
+  {
+    name: "Alice",
+    email: "alice@gmail.com",
+    mobile: "+1 9158745962",
+    city: "Los Angeles",
+    blood_group: "A+",
+    gender: "Female"
+  },
+])
+print("\n-------------------------------------------------")
+
+
+/// find all records
+print("-------------------------Show all records-------------------------")
+db.users.find()
+print("\n-------------------------------------------------------------")
+
+
+
+/// find one record
+print("------------------Show one record------------------")
+db.users.findOne()   
+
+print("\n---------------------------------------------------")
+
+db.users.findOne({
+  name: "Tom"
+})  
+print("\n---------------------------------------------------")
+
+
+
+/// search / find records
+print("-------------------Search particular records-------------------")
+var searchGender = "Femaleggg";
+
+var result = db.users.find({ gender: searchGender }).toArray();
+
+if (result.length === 0) {
+  print(searchGender + " not found");
+} else {
+  printjson(result);
+}
+
+print("\n--------------------------------------------------------------")
+
+
+/// update records
+print("------------------Update one record------------------")
+
+db.users.updateOne({_id: 2}, {$set: {gender: "Male"}})
+print("\n---------------------------------------------------------")
+db.users.findOne({_id:2})
+print("\n---------------------------------------------------------")
+
+print("------------------Update/Insert if record is not found------------------")
+db.users.updateOne( 
+  { _id: 6 }, 
+  {
+    $set: 
+      {
+        name: "Oggy",
+        email: "oggy@gmail.com",
+        city: "Chicago",
+        hobby: ["traveling", "watch movies"],
+        date: new Date()
+      }
+  }, 
+  { upsert: true }
+)
+print("\n-------------------------------------------------------------------")
+db.users.findOne({_id: 6})
+print("\n-------------------------------------------------------------------")
+
+
+print("------------------Update all records------------------")
+db.users.updateMany(
+  {},
+  { $set: { date: new Date() } }
+)
+
+print("\n---------------------------------------------------------")
+
+db.users.find()
+
+/// delete records
+print("------------------Delete one record------------------")
+/// it will delete first record that value is "Chicago"
+db.users.deleteOne({city: "Chicago"})
+
+print("\n---------------------------------------------------------")
+
+db.users.find()
+
+
+print("------------------Delete many records------------------")
+
+db.users.deleteMany({city: "Chicago"})
+
+print("\n---------------------------------------------------------")
+
+db.users.find()
