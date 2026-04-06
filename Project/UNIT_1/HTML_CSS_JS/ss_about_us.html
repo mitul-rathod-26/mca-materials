@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>About Us | St. Jude’s Academy</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed-variant": "#29486f",
+            "inverse-surface": "#2e3132",
+            "secondary": "#426088",
+            "on-tertiary-container": "#503d00",
+            "on-background": "#191c1d",
+            "background": "#f8f9fa",
+            "surface-container-high": "#e7e8e9",
+            "on-primary-fixed": "#001b3d",
+            "surface-container-low": "#f3f4f5",
+            "on-surface": "#191c1d",
+            "surface-bright": "#f8f9fa",
+            "secondary-container": "#b2d1ff",
+            "on-tertiary": "#ffffff",
+            "on-primary": "#ffffff",
+            "surface-dim": "#d9dadb",
+            "inverse-on-surface": "#f0f1f2",
+            "error-container": "#ffdad6",
+            "surface-container-highest": "#e1e2e3",
+            "on-primary-container": "#708ab5",
+            "tertiary-container": "#d2a600",
+            "on-secondary-fixed": "#001c39",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed": "#ffe08f",
+            "error": "#ba1a1a",
+            "surface": "#f8f9fa",
+            "on-secondary-container": "#3b5981",
+            "on-surface-variant": "#44474e",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#f3c000",
+            "secondary-fixed-dim": "#aac8f6",
+            "primary-fixed": "#d6e3ff",
+            "primary": "#000a1e",
+            "surface-container": "#edeeef",
+            "primary-fixed-dim": "#aec7f6",
+            "primary-container": "#002147",
+            "outline": "#74777f",
+            "inverse-primary": "#aec7f6",
+            "surface-tint": "#465f88",
+            "on-tertiary-fixed-variant": "#584400",
+            "tertiary": "#755b00",
+            "outline-variant": "#c4c6cf",
+            "on-primary-fixed-variant": "#2d476f",
+            "secondary-fixed": "#d3e3ff",
+            "surface-variant": "#e1e2e3",
+            "on-tertiary-fixed": "#241a00",
+            "on-error": "#ffffff",
+            "on-secondary": "#ffffff"
+          },
+          fontFamily: {
+            "headline": ["Public Sans"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL'0, 'wght'400, 'GRAD'0, 'opsz'24;
+    }
+
+    .text-shadow-sm {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+  <!-- TopNavBar -->
+  <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm shadow-blue-900/5">
+    <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+      <div class="text-2xl font-bold tracking-tighter text-blue-900 dark:text-blue-50 font-headline">St. Jude’s Academy</div>
+      <div class="hidden md:flex items-center gap-8">
+        <a class="font-public-sans tracking-tight text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-900 transition-colors" href="#">Home</a>
+        <a class="font-public-sans tracking-tight text-sm font-semibold text-blue-900 dark:text-amber-400 border-b-2 border-amber-400 pb-1" href="#">About Us</a>
+        <a class="font-public-sans tracking-tight text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-900 transition-colors" href="#">Academics</a>
+        <a class="font-public-sans tracking-tight text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-900 transition-colors" href="#">Admissions</a>
+        <a class="font-public-sans tracking-tight text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-900 transition-colors" href="#">Contact</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="bg-primary px-6 py-2.5 rounded-lg text-white font-headline font-semibold text-sm scale-95 active:scale-90 transition-transform">Apply Now</button>
+      </div>
+    </div>
+  </nav>
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section class="relative h-[819px] min-h-[600px] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary-container/60 z-10"></div>
+      <img alt="School Campus" class="absolute inset-0 w-full h-full object-cover" data-alt="Stately academic building with colonial architecture surrounded by manicured green lawns and tall trees under a clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC3BcxLs3XTEnxUSaDkv3VoUl641lZiqZb1-1HjA2k8kbqmNqQAR61ndNkLa7-R-xPjRow4PzclEW5KlVCzKSdbAyrFi8QV-oHC3tJsuvaKLwvvYd3ZoiVRn0UD_URWA4ifZZAY_swUwPGsZZGkqI3BgA8dJOyFjsY7jN_sfYkYPEr51ZYDN8RGMG-80oRGNNk5d1XjpHucRh0aESFUpzT67nxA1xuQ5tQdLNMhI8ouZkVyMeJ5qiWRZW3BDAtD3OW1LTezMhf7dw" />
+      <div class="relative z-20 text-center px-6 max-w-4xl">
+        <span class="inline-block px-4 py-1.5 bg-tertiary-fixed text-on-tertiary-fixed text-xs font-bold tracking-widest uppercase mb-6 rounded-full font-label">Legacy of Excellence</span>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white font-headline tracking-tighter mb-8 text-shadow-sm leading-tight">About Our Institution</h1>
+        <p class="text-xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed">Nurturing minds, building character, and fostering a tradition of academic brilliance for generations to come.</p>
+      </div>
+      <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+        <span class="material-symbols-outlined text-white text-4xl">expand_more</span>
+      </div>
+    </section>
+    <!-- Introductory Section -->
+    <section class="py-24 bg-surface-container-low">
+      <div class="max-w-4xl mx-auto px-8">
+        <div class="space-y-8">
+          <div class="h-1.5 w-24 bg-tertiary-container rounded-full mb-12"></div>
+          <p class="text-2xl md:text-3xl font-headline font-bold text-primary-container leading-snug tracking-tight">
+            S. S. Agrawal Public School, Navsari, managed by Agrawal Education Foundation, is a dream project of Late Shri Shivcharanlalji Agrawal.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+            <p class="text-on-surface-variant text-lg leading-relaxed font-body">
+              Our institution stands as a testament to the power of vision and the commitment to educational equity. We believe in providing a holistic environment where every student is encouraged to explore their unique potential while staying grounded in strong moral values.
+            </p>
+            <p class="text-on-surface-variant text-lg leading-relaxed font-body">
+              The foundation ensures that quality education remains accessible, focusing on state-of-the-art facilities and a curriculum that balances traditional wisdom with contemporary global standards.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- The Visionary Section -->
+    <section class="py-32 relative overflow-hidden bg-surface-container-lowest">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          <div class="lg:w-1/2 relative">
+            <div class="absolute -top-12 -left-12 w-64 h-64 bg-tertiary-fixed/30 rounded-full blur-3xl -z-10"></div>
+            <div class="relative group">
+              <img alt="Late Shri Shivcharanlalji Agrawal" class="w-full aspect-[4/5] object-cover rounded-xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Dignified portrait of an elderly visionary gentleman in traditional Indian attire with a warm, wise expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX3AQf9zOX3LzOp8J08K3-tXbiAvOHqgtN46uVKmQKK8HtZ63N-lYJ6AuLvl_c7UUPu-4gAHCz7kd4ccVzv_KY1zY70xwNp9X-IcBN4FqKWlzhpPdJ1-w2LXR4DxUC8argwJg3FAsV5R1iLyzCxq3zy_WrBCoRCRiWmt0fWttOPMwzbt7IqR4jG-qmyC0Wz--sIm9lyBxSze0SGSC6J38tc1sxJ5BvvhvIEjISuMkPEyBVVbCpxoEaE0g0Y2SIy9DGYjRD_DNAlj4" />
+              <div class="absolute -bottom-6 -right-6 bg-primary px-8 py-6 rounded-xl shadow-xl">
+                <span class="material-symbols-outlined text-tertiary-fixed text-5xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <h6 class="text-tertiary font-label font-bold tracking-[0.2em] uppercase mb-4">Our Founder &amp; Visionary</h6>
+            <h2 class="text-4xl md:text-5xl font-headline font-extrabold text-primary mb-8 tracking-tighter">Late Shri Shivcharanlalji Agrawal</h2>
+            <blockquote class="relative">
+              <p class="text-3xl md:text-4xl font-headline italic font-semibold text-primary-container leading-tight mb-12">
+                "Education is not just the filling of a pail, but the lighting of a fire."
+              </p>
+            </blockquote>
+            <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed">
+              <p>Shri Shivcharanlalji Agrawal's legacy continues to illuminate our path. His belief that education should empower individuals to think critically and act compassionately remains at the heart of our mission.</p>
+              <p>Under his guidance, the school was conceived not just as an academic center, but as a crucible for character building and societal transformation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Meet Our Trustees -->
+    <section class="py-32 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-24">
+          <h2 class="text-4xl font-headline font-extrabold text-primary mb-4 tracking-tight">Board of Trustees</h2>
+          <p class="text-on-surface-variant font-body max-w-2xl mx-auto">The guiding forces behind St. Jude’s Academy, dedicated to upholding the highest standards of educational leadership.</p>
+        </div>
+        <!-- Top Tier -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
+          <!-- President -->
+          <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-b-4 border-tertiary transition-transform hover:-translate-y-2 duration-300">
+            <div class="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden border-4 border-surface-container-high">
+              <img alt="Shri Sureshchandra S. Agrawal" class="w-full h-full object-cover" data-alt="Professional headshot of a mature executive man with a kind smile and spectacles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwqyxANMarc3JUp769OxWsiVzZNSiVuiqu9nZijz0aV8d7M9Y-hkulcvqshnJKEcnje7kelwgACdSS9mdlgHy4bG2ajPRwIgvHv7gSbnRQPX5LyjCyrR6r5IxgMMPCrSha3I5bIDrO8ZgR0AGpPzEidnsXRi6arlNIlK3Ij4tcZTU9v8krtpEXnOFJh7OUPFnceKraA7LGvR-zE_d2yW5BFwwUp4lxIeDdO2AtT1iKRgfUNz1g3czAd1bSiNVE8uQh6RSbKNTpHwg" />
+            </div>
+            <div class="text-center">
+              <h3 class="text-xl font-headline font-bold text-primary mb-1">Shri Sureshchandra S. Agrawal</h3>
+              <p class="text-tertiary font-label font-bold text-xs tracking-widest uppercase">President</p>
+            </div>
+          </div>
+          <!-- Vice President -->
+          <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-b-4 border-tertiary transition-transform hover:-translate-y-2 duration-300">
+            <div class="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden border-4 border-surface-container-high">
+              <img alt="Shri Vishnuprasad S. Agrawal" class="w-full h-full object-cover" data-alt="Portrait of a distinguished man in a suit with salt and pepper hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzltjzxB4EU_9NmGxNnKeTuvTiKEwrlMULRAUo7Nir91TDtvROCwlZ91QT9De2dsPEMQ440seqTxCwj3OsY_GiDrIqpdbeR1Cc7fuYD4MIHA_6p0qIJ6Inbk1rb-vJ-I7TBGQqgHyGyeBuc6lQ3WIL0o7Mbzkk_i_2AVzqj4mYddvz6eFP262HobxFE1hF3Ds0rnkSxVP2t4VeZxO88TVk5Yfgt_CZ79Y9gTZE3aKnK_XgKxNjfrQd-Dqo0XcYmiHimbBV_Rocz9U" />
+            </div>
+            <div class="text-center">
+              <h3 class="text-xl font-headline font-bold text-primary mb-1">Shri Vishnuprasad S. Agrawal</h3>
+              <p class="text-tertiary font-label font-bold text-xs tracking-widest uppercase">Vice President</p>
+            </div>
+          </div>
+          <!-- Secretary -->
+          <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-b-4 border-tertiary transition-transform hover:-translate-y-2 duration-300">
+            <div class="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden border-4 border-surface-container-high">
+              <img alt="Mrs. Jyotsna R. Agrawal" class="w-full h-full object-cover" data-alt="Corporate headshot of a sophisticated woman with a friendly, professional demeanor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCidI8i2xJWyjaoGjTVws_C1YGUQtRpXXlSd5tCtFnB0_UUBDaXEyfVDMzZG5K0-ZjJXmTFpwq0f-LPD5YATywvgvv0i_H-DNRaiIg-Ifws0tdDvKytj4XvIoLnqN2DATIkqOzGMKD9Ajon8kdDeJrF2sey5LAX4-LnEko6wrXDa9WaDVgNFW0yG28TKKDEHHPttGzeP2dZlSkMsEa9W0N0lhdaB8B2pAzJrOETkfm5aTFr0F53aNeC6-QG8Idqug9LVNFZqx-ztjY" />
+            </div>
+            <div class="text-center">
+              <h3 class="text-xl font-headline font-bold text-primary mb-1">Mrs. Jyotsna R. Agrawal</h3>
+              <p class="text-tertiary font-label font-bold text-xs tracking-widest uppercase">Secretary</p>
+            </div>
+          </div>
+        </div>
+        <!-- Second Tier -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="bg-surface-container p-6 rounded-xl flex items-center gap-6">
+            <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+              <img alt="Trustee" data-alt="Portrait of a smiling professional man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe2mlK-HYGEIBCxQYvSMVGs-b2sA8_PdGMGxYpmLdglIMidwXRjESQhzTaL5Nvjt90C83B6cHKP2MqY5cXDtMf_9u1kWKRt1w-VOCP6ozPAsIIpT8_-vmvWfObA3Uvvn2h0Nb9_qXnSX0M29alzrGmzlxen2zzbLZlF34SkX6G8YOIkrj115aIvx67rTy612dpOAc0ofcctkY90cYjAMumT1u188oCHqebZsoViGMMscORtT_PXmUpQvlL-Tx4m8Apn8pU8PTYfOI" />
+            </div>
+            <div>
+              <h4 class="font-headline font-bold text-primary leading-tight">Shri Omprakash S. Agrawal</h4>
+              <p class="text-on-surface-variant text-xs font-label">Trustee Member</p>
+            </div>
+          </div>
+          <div class="bg-surface-container p-6 rounded-xl flex items-center gap-6">
+            <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+              <img alt="Trustee" data-alt="Portrait of a professional man in spectacles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgO5HwyOlcDo6kaQrDej5qsBpI-Jd6m8kUF76HJ7-d9FtIplbw1M7LSsDiWFqZt7EUh7p5URv33Mq5G-C0o5iaBmhrxncRtbXzALoImMENjfgrlp205YULyfj8XFRMcdtiHvtk0A5LfWJtuH9zoJ2cUj4ZmwGLJZ2hZLmu167kR7_D89UQuGujagstFhf9x8ivSNjakrIGx3p9rsWtbh2JRPJP7sPpFyCkDNB11rZVQGg9riWkKAJovyvEyAo5MvuN7RZSBhmbB7U" />
+            </div>
+            <div>
+              <h4 class="font-headline font-bold text-primary leading-tight">Shri Rajeshkumar S. Agrawal</h4>
+              <p class="text-on-surface-variant text-xs font-label">Trustee Member</p>
+            </div>
+          </div>
+          <div class="bg-surface-container p-6 rounded-xl flex items-center gap-6">
+            <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+              <img alt="Trustee" data-alt="Portrait of a confident professional man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2ZdAweDqmPJ-3h1w9_4hsBXV-NqbsA7eVnrFWOZ1zmVQJCamdgZ6mx4k-MhSzOaslq-5496DeRcRbzdwBOoR4TFzSlcXooGFA1cZ18xpUZF3E12QjiemXf_kbwTQFOZjp59h9--cvQlmCU2sRU5EKZXKLhvtS9H6s-Fvo_GPyXAX9FhoqJglSuZGG9IdpzcTUFLEC_kxvZmCydlLGYpTJ-di01HG8f-a6_YZPKZxRVG3vcPnM860c9KCteL5Nquh5L-MGgLEmP_Q" />
+            </div>
+            <div>
+              <h4 class="font-headline font-bold text-primary leading-tight">Shri Satishkumar S. Agrawal</h4>
+              <p class="text-on-surface-variant text-xs font-label">Trustee Member</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Principal's Message -->
+    <section class="py-32 bg-primary text-white relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-1/3 h-full bg-primary-container opacity-50 skew-x-12 translate-x-1/2"></div>
+      <div class="max-w-4xl mx-auto px-8 relative z-10">
+        <div class="mb-12">
+          <span class="material-symbols-outlined text-tertiary-fixed text-8xl mb-8 block opacity-40" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+          <h2 class="text-4xl md:text-5xl font-headline font-extrabold mb-4 tracking-tight">From the Principal's Desk</h2>
+          <p class="text-tertiary-fixed font-headline font-bold text-xl">Dr. Ambika Nair</p>
+        </div>
+        <div class="space-y-8 text-xl md:text-2xl font-body font-light leading-relaxed text-white/90 italic">
+          <p>
+            "At St. Jude’s Academy, we believe that education is a collaborative journey between the teachers, students, and parents. Our focus is not just on academic results, but on building resilient individuals who are prepared to face the complexities of the modern world with integrity and courage."
+          </p>
+          <p>
+            "We strive to create a space where curiosity is celebrated and diversity is our strength. Every child is a unique story waiting to be told, and our role is to provide the ink and the inspiration."
+          </p>
+        </div>
+        <div class="mt-16 pt-8 border-t border-white/20 inline-block">
+          <p class="font-headline font-bold tracking-widest uppercase text-sm text-tertiary-fixed">Leading with Heart &amp; Mind</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-slate-100 dark:bg-slate-900 w-full border-t border-slate-200 dark:border-slate-800">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 max-w-7xl mx-auto">
+      <div class="col-span-1 md:col-span-1">
+        <span class="text-xl font-bold text-blue-950 dark:text-white mb-4 block font-headline">St. Jude’s Academy</span>
+        <p class="text-slate-500 dark:text-slate-400 font-public-sans text-sm leading-relaxed mb-6">Empowering students through innovation, tradition, and academic excellence.</p>
+        <div class="flex gap-4">
+          <span class="material-symbols-outlined text-blue-900 cursor-pointer hover:opacity-100 opacity-80 transition-opacity">social_leaderboard</span>
+          <span class="material-symbols-outlined text-blue-900 cursor-pointer hover:opacity-100 opacity-80 transition-opacity">language</span>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-headline font-bold text-blue-950 dark:text-white mb-6">Quick Links</h4>
+        <ul class="space-y-4">
+          <li><a class="text-slate-500 dark:text-slate-400 font-public-sans text-sm hover:text-blue-800 underline-offset-4 hover:underline decoration-amber-400 decoration-2" href="#">Academic Portal</a></li>
+          <li><a class="text-slate-500 dark:text-slate-400 font-public-sans text-sm hover:text-blue-800 underline-offset-4 hover:underline decoration-amber-400 decoration-2" href="#">Student Login</a></li>
+          <li><a class="text-slate-500 dark:text-slate-400 font-public-sans text-sm hover:text-blue-800 underline-offset-4 hover:underline decoration-amber-400 decoration-2" href="#">Faculty Directory</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-headline font-bold text-blue-950 dark:text-white mb-6">Support</h4>
+        <ul class="space-y-4">
+          <li><a class="text-slate-500 dark:text-slate-400 font-public-sans text-sm hover:text-blue-800 underline-offset-4 hover:underline decoration-amber-400 decoration-2" href="#">Privacy Policy</a></li>
+          <li><a class="text-slate-500 dark:text-slate-400 font-public-sans text-sm hover:text-blue-800 underline-offset-4 hover:underline decoration-amber-400 decoration-2" href="#">Terms of Service</a></li>
+          <li><a class="text-slate-500 dark:text-slate-400 font-public-sans text-sm hover:text-blue-800 underline-offset-4 hover:underline decoration-amber-400 decoration-2" href="#">Campus Map</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-headline font-bold text-blue-950 dark:text-white mb-6">Contact Us</h4>
+        <div class="space-y-4 text-slate-500 dark:text-slate-400 font-public-sans text-sm leading-relaxed">
+          <p class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">location_on</span> Navsari, Gujarat, India</p>
+          <p class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">mail</span> admissions@stjudesacademy.edu</p>
+          <p class="flex items-center gap-2"><span class="material-symbols-outlined text-xs">call</span> +91 000-000-0000</p>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-8 py-8 border-t border-slate-200/50 dark:border-slate-800/50">
+      <p class="text-center text-slate-400 dark:text-slate-500 text-xs font-public-sans">
+        © 2024 St. Jude’s Academy. All rights reserved. Accredited by the National Board of Excellence.
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
