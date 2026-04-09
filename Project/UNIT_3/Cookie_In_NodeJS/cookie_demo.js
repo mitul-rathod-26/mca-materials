@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 // Step 3: SET a cookie
 app.get('/set-cookie', (req, res) => {
     res.cookie('username', 'John', {
-        maxAge: 60000,   // expires in 15 minutes
+        maxAge: 900000,   // expires in 15 minutes
         httpOnly: true // The cookie only accessible by the web server, & cannot be accessed by JavaScript- security
     });
     res.send('Cookie has been set..!');
