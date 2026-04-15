@@ -120,7 +120,11 @@ function App() {
 
       {/* using props */}
       {/* <Users name="Jony" age="21" city="Goa" /> */}
-    
+
+
+      {/* <div className="app-container">
+        <Users />
+      </div> */}
     </>
   )
 }
