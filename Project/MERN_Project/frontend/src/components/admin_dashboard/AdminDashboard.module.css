@@ -1,0 +1,154 @@
+.wrapper {
+  min-height: 100vh;
+  background: #f0f2f5;
+  font-family: system-ui, sans-serif;
+  color-scheme: light;
+}
+
+.main {
+  padding: 40px 32px;
+  text-align: left;
+}
+
+/* Header */
+.header {
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: 28px;
+  color: #1a1a2e;
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.header h1 span {
+  color: #302b63;
+}
+
+.header p {
+  color: #6b7280;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* Stats */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.statCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.statIcon {
+  font-size: 32px;
+}
+
+.statCard h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.statCard p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Section */
+.section {
+  margin-bottom: 36px;
+}
+
+.section h2 {
+  font-size: 18px;
+  color: #1a1a2e;
+  margin: 0 0 16px;
+  font-weight: 600;
+}
+
+/* Quick Actions */
+.actionsGrid {
+  display: flex;
+  gap: 16px;
+}
+
+.actionCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-width: 140px;
+}
+
+.actionCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.actionCard span {
+  font-size: 28px;
+}
+
+.actionCard p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #302b63;
+  margin: 0;
+}
+
+/* Table */
+.table {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 120px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #0f0c29, #302b63);
+  color: rgba(255,255,255,0.85);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 120px;
+  padding: 14px 20px;
+  font-size: 14px;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+  align-items: center;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.na {
+  color: #9ca3af;
+  font-style: italic;
+  font-size: 13px;
+}
