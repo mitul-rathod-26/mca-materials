@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navsari Weather</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: urbanist;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e8f4fd;
+      }
+      .card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem 2.5rem;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        min-width: 300px;
+      }
+      .location {
+        font-size: 14px;
+        color: #888;
+        margin-bottom: 0.5rem;
+      }
+      .condition {
+        font-size: 22px;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+      .temp {
+        font-size: 64px;
+        font-weight: 300;
+        color: #1a73e8;
+      }
+      .temp span {
+        font-size: 28px;
+      }
+      .stats {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #f0f0f0;
+      }
+      .stat label {
+        font-size: 12px;
+        color: #aaa;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .stat value {
+        font-size: 16px;
+        font-weight: 500;
+        color: #444;
+      }
+      .updated {
+        font-size: 11px;
+        color: #bbb;
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <p class="location">📍<%= location %></p>
+      <p class="condition"><%= condition %></p>
+      <div class="temp"><%= temperature %><span>°C</span></div>
+      <div class="stats">
+        <div class="stat">
+          <label>Humidity</label>
+          <value><%= humidity %>%</value>
+        </div>
+        <div class="stat">
+          <label>Wind</label>
+          <value><%= wind %> km/h</value>
+        </div>
+      </div>
+      <p class="updated">Updated at: <%= updated_at %></p>
+    </div>
+  </body>
+</html>

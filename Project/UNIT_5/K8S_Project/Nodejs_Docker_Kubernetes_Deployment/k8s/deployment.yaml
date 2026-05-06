@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-k8s-demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-k8s-demo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: node-k8s-demo
+    spec:
+      containers:
+        - name: node-k8s-demo
+          image: dipeshlohar348/node-k8s-demo:1.0
+          ports:
+            - containerPort: 3000

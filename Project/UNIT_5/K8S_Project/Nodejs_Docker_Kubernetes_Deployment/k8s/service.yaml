@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  name: node-k8s-demo-service
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app: node-k8s-demo
+  type: LoadBalancer
+status:
+  loadBalancer: {}
