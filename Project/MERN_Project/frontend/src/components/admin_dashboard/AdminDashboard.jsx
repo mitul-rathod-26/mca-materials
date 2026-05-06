@@ -1,29 +1,31 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../navbar/Navbar'
 import styles from './AdminDashboard.module.css'
 
-const stats = [
-  { label: 'Total Users', value: '6', icon: '👥' },
-  { label: 'Active Users', value: '4', icon: '✅' },
-  { label: 'New This Month', value: '2', icon: '🆕' },
-  { label: 'Admins', value: '1', icon: '🛡️' },
-]
-
-const recentUsers = [
-  { name: 'Alice Johnson', email: 'alice@gmail.com', address: '123 Main St, New York' },
-  { name: 'Bob Smith', email: 'bob@gmail.com', address: '' },
-  { name: 'Charlie Brown', email: 'charlie@gmail.com', address: '789 Pine Rd, Texas' },
-]
-
 function AdminDashboard() {
   const navigate = useNavigate()
+  const [users, setUsers] = useState([])
 
   useEffect(() => {
-    if (!sessionStorage.getItem('isLoggedIn')) {
+    if (!sessionStorage.getItem('token')) {
       navigate('/', { replace: true })
     }
+    
+    fetch('/user/all')
+      .then(res => res.json())
+      .then(data => setUsers(data))
+      .catch(err => console.error(err))
   }, [])
+
+  const stats = [
+    { label: 'Total Users', value: users.length, icon: '👥' },
+    { label: 'Active Users', value: users.length, icon: '✅' },
+    { label: 'New This Month', value: users.length, icon: '🆕' },
+    { label: 'Admins', value: '1', icon: '🛡️' },
+  ]
+
+  const recentUsers = users.slice(0, 3)
 
   return (
     <div className={styles.wrapper}>
@@ -73,7 +75,7 @@ function AdminDashboard() {
               <span>Address</span>
             </div>
             {recentUsers.map((u) => (
-              <div key={u.email} className={styles.tableRow}>
+              <div key={u._id} className={styles.tableRow}>
                 <span>{u.name}</span>
                 <span>{u.email}</span>
                 <span>{u.address ? u.address : <em className={styles.na}>NA</em>}</span>

@@ -8,16 +8,41 @@ function Login() {
   const navigate = useNavigate()
   const [error, setError] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    if (form.email === 'admin@gmail.com' && form.password === 'Admin@123') {
-      sessionStorage.setItem('isLoggedIn', 'true')
-      navigate('/dashboard', { replace: true })
-    } else if (form.email === 'user@gmail.com' && form.password === 'User@123') {
-      sessionStorage.setItem('isLoggedIn', 'true')
-      navigate('/user-dashboard', { replace: true })
-    } else {
-      setError('Invalid email or password')
+    setError('')
+    
+    try {
+      const adminRes = await fetch('/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+      })
+      
+      if (adminRes.ok) {
+        const data = await adminRes.json()
+        sessionStorage.setItem('token', data.token)
+        sessionStorage.setItem('role', 'admin')
+        navigate('/dashboard', { replace: true })
+        return
+      }
+      
+      const userRes = await fetch('/user/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+      })
+      
+      if (userRes.ok) {
+        const data = await userRes.json()
+        sessionStorage.setItem('user', JSON.stringify(data))
+        sessionStorage.setItem('role', 'user')
+        navigate('/user-dashboard', { replace: true })
+      } else {
+        setError('Invalid email or password')
+      }
+    } catch (err) {
+      setError('Login failed. Please try again.')
     }
   }
 

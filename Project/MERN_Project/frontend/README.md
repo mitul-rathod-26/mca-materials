@@ -1,16 +1,70 @@
-# React + Vite
+# Frontend - MERN Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite frontend for the MERN project.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19
+- React Router DOM
+- Vite
+- CSS Modules
 
-## React Compiler
+## Folder Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+frontend/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── login/             # Login page (admin & user)
+│   │   ├── navbar/            # Top navigation bar
+│   │   ├── admin_dashboard/   # Admin home page with stats
+│   │   ├── add_user/          # Admin - add new user form
+│   │   ├── all_users/         # Admin - view all users
+│   │   └── user_dashboard/    # User home + update profile
+│   ├── App.jsx                # Routes setup
+│   ├── main.jsx               # App entry point
+│   └── index.css
+├── vite.config.js             # Vite config with proxy
+└── package.json
+```
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the dev server:
+```bash
+npm run dev
+```
+
+Frontend runs on `http://localhost:5173`
+
+> Make sure the backend is running on `http://localhost:3000` before using the app.
+
+## Pages & Components
+
+| Component | Route | Description |
+|-----------|-------|-------------|
+| Login | `/` | Login for both admin and user |
+| AdminDashboard | `/admin` | Admin home with user stats |
+| AddUser | `/admin/add-user` | Form to add a new user |
+| AllUsers | `/admin/all-users` | Table showing all users |
+| UserDashboard | `/user` | User home page |
+| UpdateProfile | `/user/update` | Update user name, address, password |
+
+## Proxy Config
+
+API calls are proxied to the backend via `vite.config.js`:
+
+```js
+proxy: {
+  '/admin': 'http://localhost:3000',
+  '/user': 'http://localhost:3000'
+}
+```
+
+This means you can call `/admin/login` directly in fetch without writing the full URL.

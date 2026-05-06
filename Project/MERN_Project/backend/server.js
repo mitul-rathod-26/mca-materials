@@ -5,6 +5,9 @@ const adminRoutes = require('./routes/adminRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 const app = express();
+const cors = require('cors');
+
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)

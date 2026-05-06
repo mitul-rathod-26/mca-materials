@@ -1,11 +1,25 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 import styles from './Navbar.module.css'
 
-function Navbar({ role = 'admin', userName = role === 'admin' ? 'Admin' : 'User' }) {
+function Navbar({ role = 'admin' }) {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const handleLogout = () => {
+  const getUserName = () => {
+    if (role === 'admin') return 'Admin'
+    const userData = sessionStorage.getItem('user')
+    if (userData) return JSON.parse(userData).user?.name || 'User'
+    return 'User'
+  }
+
+  const handleLogout = async () => {
+    if (role === 'admin') {
+      const token = sessionStorage.getItem('token')
+      await fetch('/admin/logout', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}` }
+      }).catch(() => {})
+    }
     sessionStorage.clear()
     navigate('/', { replace: true })
   }
@@ -29,7 +43,7 @@ function Navbar({ role = 'admin', userName = role === 'admin' ? 'Admin' : 'User'
         )}
       </div>
       <div className={styles.navRight}>
-        <span className={styles.welcome}>Welcome, <strong>{userName}</strong></span>
+        <span className={styles.welcome}>Welcome, <strong>{getUserName()}</strong></span>
         <button className={styles.logout} onClick={handleLogout}>Logout</button>
       </div>
     </nav>

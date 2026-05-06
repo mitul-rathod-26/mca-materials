@@ -110,3 +110,10 @@
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
 }
+
+.field input:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  border-color: #e5e7eb;
+}

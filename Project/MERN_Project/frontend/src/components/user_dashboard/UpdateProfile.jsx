@@ -1,13 +1,26 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../navbar/Navbar'
-import styles from './AddUser.module.css'
+import styles from '../add_user/AddUser.module.css'
 
-function AddUser() {
+function UpdateProfile() {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({ name: '', email: '', address: '', password: '' })
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    const userData = sessionStorage.getItem('user')
+    if (userData) {
+      const parsed = JSON.parse(userData)
+      setFormData({ 
+        name: parsed.user.name, 
+        email: parsed.user.email, 
+        address: parsed.user.address || '', 
+        password: '' 
+      })
+    }
+  }, [])
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -19,13 +32,9 @@ function AddUser() {
     setError('')
     
     try {
-      const token = sessionStorage.getItem('token')
-      const res = await fetch('/admin/add-user', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
+      const res = await fetch('/user/update', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       })
       
@@ -33,22 +42,22 @@ function AddUser() {
       
       if (res.ok) {
         setMessage(data.message)
-        setFormData({ name: '', email: '', address: '', password: '' })
-        setTimeout(() => navigate('/dashboard'), 1500)
+        sessionStorage.setItem('user', JSON.stringify({ user: data.user }))
+        setTimeout(() => navigate('/user-dashboard'), 1500)
       } else {
         setError(data.message)
       }
     } catch (err) {
-      setError('Failed to add user')
+      setError('Failed to update profile')
     }
   }
 
   return (
     <div className={styles.wrapper}>
-      <Navbar />
+      <Navbar role="user" />
       <main className={styles.main}>
         <div className={styles.card}>
-          <h2>Add New User</h2>
+          <h2>Update Profile</h2>
 
           {message && <p className={styles.success}>{message}</p>}
           {error && <p className={styles.error}>{error}</p>}
@@ -60,8 +69,8 @@ function AddUser() {
             </div>
 
             <div className={styles.field}>
-              <label>Email <span>*</span></label>
-              <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Enter email" required />
+              <label>Email</label>
+              <input type="email" name="email" value={formData.email} disabled />
             </div>
 
             <div className={styles.field}>
@@ -70,11 +79,14 @@ function AddUser() {
             </div>
 
             <div className={styles.field}>
-              <label>Password <span>*</span></label>
-              <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Enter password" required />
+              <label>New Password <span className={styles.optional}>(Optional)</span></label>
+              <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Enter new password" />
             </div>
 
-            <button type="submit" className={styles.btn}>Add User</button>
+            <div className={styles.form} style={{ flexDirection: 'row', gap: '12px' }}>
+              <button type="button" className={styles.btn} style={{ background: '#6b7280' }} onClick={() => navigate('/user-dashboard')}>Cancel</button>
+              <button type="submit" className={styles.btn}>Update</button>
+            </div>
           </form>
         </div>
       </main>
@@ -82,4 +94,4 @@ function AddUser() {
   )
 }
 
-export default AddUser
+export default UpdateProfile

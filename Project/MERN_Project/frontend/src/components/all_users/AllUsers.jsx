@@ -1,18 +1,16 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from '../navbar/Navbar'
 import styles from './AllUsers.module.css'
 
-const dummyUsers = [
-  { _id: '1', name: 'Alice Johnson', email: 'alice@gmail.com', address: '123 Main St, New York' },
-  { _id: '2', name: 'Bob Smith', email: 'bob@gmail.com', address: '456 Oak Ave, California' },
-  { _id: '3', name: 'Charlie Brown', email: 'charlie@gmail.com', address: '' },
-  { _id: '4', name: 'Diana Prince', email: 'diana@gmail.com', address: '789 Pine Rd, Texas' },
-  { _id: '5', name: 'Ethan Hunt', email: 'ethan@gmail.com', address: '' },
-  { _id: '6', name: 'Fiona Green', email: 'fiona@gmail.com', address: '321 Elm St, Florida' },
-]
-
 function AllUsers() {
-  const [users] = useState(dummyUsers)
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    fetch('/user/all')
+      .then(res => res.json())
+      .then(data => setUsers(data))
+      .catch(err => console.error(err))
+  }, [])
 
   return (
     <div className={styles.wrapper}>

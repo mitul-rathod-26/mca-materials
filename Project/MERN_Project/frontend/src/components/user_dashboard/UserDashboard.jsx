@@ -1,14 +1,19 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../navbar/Navbar'
 import styles from './UserDashboard.module.css'
 
 function UserDashboard() {
   const navigate = useNavigate()
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
-    if (!sessionStorage.getItem('isLoggedIn')) {
+    const userData = sessionStorage.getItem('user')
+    if (!userData) {
       navigate('/', { replace: true })
+    } else {
+      const parsed = JSON.parse(userData)
+      setUser(parsed.user)
     }
   }, [])
 
@@ -18,7 +23,7 @@ function UserDashboard() {
       <main className={styles.main}>
 
         <div className={styles.header}>
-          <h1>Welcome back, <span>User</span> 👋</h1>
+          <h1>Welcome back, <span>{user?.name || 'User'}</span> 👋</h1>
           <p>Manage your profile and account details from here.</p>
         </div>
 
@@ -61,27 +66,29 @@ function UserDashboard() {
         {/* Profile Info */}
         <div className={styles.section}>
           <h2>Profile Details</h2>
-          <div className={styles.profileCard}>
-            <img
-              src="https://api.dicebear.com/7.x/initials/svg?seed=User"
-              alt="User Avatar"
-              className={styles.avatar}
-            />
-            <div className={styles.profileInfo}>
-              <div className={styles.profileRow}>
-                <span className={styles.profileLabel}>Name</span>
-                <span className={styles.profileValue}>Alice Johnson</span>
-              </div>
-              <div className={styles.profileRow}>
-                <span className={styles.profileLabel}>Email</span>
-                <span className={styles.profileValue}>alice@gmail.com</span>
-              </div>
-              <div className={styles.profileRow}>
-                <span className={styles.profileLabel}>Address</span>
-                <span className={styles.profileValue}>123 Main St, New York</span>
+          {user && (
+            <div className={styles.profileCard}>
+              <img
+                src={`https://api.dicebear.com/7.x/initials/svg?seed=${user.name}`}
+                alt="User Avatar"
+                className={styles.avatar}
+              />
+              <div className={styles.profileInfo}>
+                <div className={styles.profileRow}>
+                  <span className={styles.profileLabel}>Name</span>
+                  <span className={styles.profileValue}>{user.name}</span>
+                </div>
+                <div className={styles.profileRow}>
+                  <span className={styles.profileLabel}>Email</span>
+                  <span className={styles.profileValue}>{user.email}</span>
+                </div>
+                <div className={styles.profileRow}>
+                  <span className={styles.profileLabel}>Address</span>
+                  <span className={styles.profileValue}>{user.address || 'N/A'}</span>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
 
       </main>
