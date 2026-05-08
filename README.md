@@ -55,6 +55,21 @@ Covers the fundamentals of web development.
 
 ---
 
+## 🔷 UNIT 5 — App Implementation in Cloud
+
+Covers cloud deployment concepts and containerization technologies.
+
+| Topic | Description |
+|---|---|
+| Cloud Providers Overview | Introduction to major cloud platforms (AWS, GCP, Azure) |
+| Virtual Private Cloud (VPC) | Isolated network environments in the cloud |
+| Scaling | Horizontal scaling (adding instances) vs Vertical scaling (upgrading resources) |
+| Virtual Machines | VMs, Ethernet, and Switches in cloud infrastructure |
+| Docker Container | Containerizing applications using Docker |
+| Kubernetes | Container orchestration and cluster management |
+
+---
+
 ## 🚀 How to Run Node.js Projects
 
 ```bash
